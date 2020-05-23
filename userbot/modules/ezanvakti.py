@@ -9,7 +9,6 @@
 # @NaytSeyd tarafından portlanmıştır.
 # @frknkrc44 tarafından düzenlenmiştir.
 
-import asyncio
 import json
 import logging
 
@@ -44,7 +43,7 @@ async def ezanvakti(event):
     aksam = result[4]
     yatsi = result[5]
 
-    vakitler =(f"**Diyanet Namaz Vakitleri**\n\n" + 
+    vakitler =("**Diyanet Namaz Vakitleri**\n\n" + 
                  f"📍 **Yer: **`{konum}`\n\n" +
                  f"🏙 **İmsak: ** `{imsak}`\n" +
                  f"🌅 **Güneş: ** `{gunes}`\n" +
@@ -79,7 +78,7 @@ async def ramazan(event):
     iftar = styling_times(result[1])
     teravih = styling_times(result[2])
 
-    vakitler =(f"**Diyanet Ramazan Vakitleri**\n\n" + 
+    vakitler =("**Diyanet Ramazan Vakitleri**\n\n" + 
                  f"📍 **Yer: **`{konum}`\n\n" +
                  f"🏙 **Sahur: ** `{sahur}`\n" +
                  f"🌃 **İftar: ** `{iftar}`\n" +

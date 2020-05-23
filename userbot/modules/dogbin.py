@@ -10,9 +10,8 @@
 """ Dogbin ile etkileşim için komutlar içeren UserBot modülü(https://del.dog)"""
 
 from requests import get, post, exceptions
-import asyncio
 import os
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
 
 DOGBIN_URL = "https://del.dog/"
@@ -72,7 +71,7 @@ async def paste(pstl):
     if BOTLOG:
         await pstl.client.send_message(
             BOTLOG_CHATID,
-            f"Dogbine metin yapıştırma başarıyla yürütüldü",
+            "Dogbine metin yapıştırma başarıyla yürütüldü",
         )
 
 

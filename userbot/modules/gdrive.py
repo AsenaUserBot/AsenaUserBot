@@ -15,18 +15,15 @@ from pySmartDL import SmartDL
 from telethon import events
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
-from googleapiclient.errors import ResumableUploadError
 from oauth2client.client import OAuth2WebServerFlow
 from oauth2client.file import Storage
-from oauth2client import file, client, tools
 from userbot import (G_DRIVE_CLIENT_ID, G_DRIVE_CLIENT_SECRET,
                      G_DRIVE_AUTH_TOKEN_DATA, GDRIVE_FOLDER_ID, BOTLOG_CHATID,
                      TEMP_DOWNLOAD_DIRECTORY, CMD_HELP, LOGS)
 from userbot.events import register
 from mimetypes import guess_type
 import httplib2
-import subprocess
-from userbot.modules.upload_download import progress, humanbytes, time_formatter
+from userbot.modules.upload_download import progress, humanbytes
 
 # Json dosyasının yolu, script ile aynı dizinde bulunmalıdır.
 G_DRIVE_TOKEN_FILE = "./auth_token.txt"
@@ -235,12 +232,12 @@ async def download(gclr):
 @register(pattern="^.gfolder$", outgoing=True)
 async def show_current_gdrove_folder(event):
     if parent_id:
-        folder_link = f"https://drive.google.com/drive/folders/" + parent_id
+        folder_link = "https://drive.google.com/drive/folders/" + parent_id
         await event.edit(
             f"UserBot'um dosyaları [şuraya]({folder_link}) uploadlıyor.")
     else:
         await event.edit(
-            f"UserBot'um dosyaları Google Drive'ın kök dizinine uploadlıyor.\
+            "UserBot'um dosyaları Google Drive'ın kök dizinine uploadlıyor.\
             \nUploadlanan dosyalar [burada](https://drive.google.com/drive/my-drive)"
         )
 

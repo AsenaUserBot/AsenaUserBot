@@ -9,11 +9,10 @@
 
 import os
 import lyricsgenius
-import random
 import asyncio
 
 from userbot.events import register
-from userbot import CMD_HELP, LOGS, GENIUS
+from userbot import CMD_HELP, GENIUS
 
 @register(outgoing=True, pattern="^.lyrics(?: |$)(.*)")
 async def lyrics(lyric):
@@ -116,7 +115,7 @@ async def singer(lyric):
             i += 1
         except:
             i += 1
-    await lyric.edit(f"🎙Çok güzel söyledim, değil mi?")
+    await lyric.edit("🎙Çok güzel söyledim, değil mi?")
 
     return
 
